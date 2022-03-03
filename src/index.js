@@ -16,7 +16,6 @@ const imageList = (state = [], action) => {
         default:
             return state;
     }
-    return state;
 }
 function* rootSaga() {
     yield takeEvery('FETCH_IMAGE', fetchImage)
@@ -24,10 +23,10 @@ function* rootSaga() {
 }
 
 // ---------- GET Routes -----------------------
-function* fetchImage() {
+function* fetchImage(action) {
     try {
         const imageData = yield axios.get(`/api/giphy/${action.payload}`)
-        yield put({ type: 'SET_IMAGE', payload: imageData.data })
+        yield put({ type: 'SET_IMAGE', payload: imageData.data.data })
     } catch (error) {
         console.log('Error fetching image search', error);
     }
