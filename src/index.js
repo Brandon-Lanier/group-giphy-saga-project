@@ -24,7 +24,7 @@ function* rootSaga() {
 }
 
 // ---------- GET Routes -----------------------
-function* fetchImage() {
+function* fetchImage(action) {
     try {
         const imageData = yield axios.get(`/api/giphy/${action.payload}`)
         yield put({ type: 'SET_IMAGE', payload: imageData.data })
