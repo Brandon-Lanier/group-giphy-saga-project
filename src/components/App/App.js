@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Link, Route } from 'react-router-dom';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchForm from '../SearchForm/SearchForm';
-
+import './App.css'
 
 function App() {
   return (

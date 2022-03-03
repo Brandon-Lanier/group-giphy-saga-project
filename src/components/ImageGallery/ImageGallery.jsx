@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-
+import './ImageGallery.css';
 
 
 function ImageGallery() {
@@ -8,7 +8,7 @@ function ImageGallery() {
 
     return (
 
-        <div>
+        <div className="gallery">
             {imageList.map((image, i) => (
                 <ImageItem 
                 key={i}

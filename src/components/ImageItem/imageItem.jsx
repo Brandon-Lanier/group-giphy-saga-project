@@ -4,8 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import RecommendIcon from '@mui/icons-material/Recommend';
 
 function ImageItem({ image }) {
+
+    const handleLike = () => {
+        console.log('I hit the like button');
+    }
 
     return (
         <Card sx={{ maxWidth: 300 }}>
@@ -21,7 +26,7 @@ function ImageItem({ image }) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Like</Button>
+                <RecommendIcon onClick={handleLike} />
             </CardActions>
         </Card>
     )
