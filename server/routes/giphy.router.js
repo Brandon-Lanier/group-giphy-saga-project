@@ -7,6 +7,7 @@ const router = express.Router();
 
   router.get('/:q', (req, res) => {
     const searchTxt = req.params.q
+    console.log('searchText:', searchTxt);
     axios.get(`http://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${searchTxt}`)
     .then(response => res.send(response.data))
     .catch(error => {

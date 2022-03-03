@@ -6,6 +6,7 @@ function ImageGallery() {
 
     const imageList = useSelector(store => store.imageList)
 
+    console.log('imageList is:', imageList);
     return (
 
         <div className="gallery">
