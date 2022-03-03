@@ -20,7 +20,7 @@ function SearchForm() {
 
         // this is setting the state of the search reducer - Which has not been made yet... if we even need one
         dispatch({
-            type: "SEARCH_GIF",
+            type: "FETCH_IMAGE",
             payload: searchParameter
         })
 
