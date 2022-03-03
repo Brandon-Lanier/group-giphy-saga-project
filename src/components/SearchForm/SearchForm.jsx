@@ -1,3 +1,6 @@
+import {useDispatch} from 'react-redux';
+import {useState} from 'react';
+
 
 
 
@@ -9,10 +12,25 @@ function SearchForm() {
 
 
 
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+
 
     const handleSubmit = () => {
-        
+
+        event.preventDefault();
+
+        // this is setting the state of the search reducer - Which has not been made yet... if we even need one
+        dispatch({
+            type: "SEARCH_GIF",
+            payload: searchParameter
+        })
+
     }
+
+        
+    
 
 
     
