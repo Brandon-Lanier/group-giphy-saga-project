@@ -1,7 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
-
-
+import { useHistory } from 'react-router-dom';
 
 
 function SearchForm() {
@@ -16,9 +15,7 @@ function SearchForm() {
     const dispatch = useDispatch();
 
 
-
-    const handleSubmit = () => {
-
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         // this is setting the state of the search reducer - Which has not been made yet... if we even need one
@@ -28,10 +25,6 @@ function SearchForm() {
         })
 
     }
-
-        
-    
-
 
     
     return(
