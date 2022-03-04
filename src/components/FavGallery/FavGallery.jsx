@@ -1,24 +1,26 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import FavItem from '../FavItem/FavItem';
+import { useDispatch } from "react-redux";
 
 function FavGallery() {
 
     useEffect(() => {
-        getFavs();
+        dispatch({type: 'GET_FAVORITES'});
     }, []);
 
-    const favImages = useSelector(store => store.favoritesList)
+    const favImages = useSelector(store => store.favoritesLis)
+    const dispatch = useDispatch();
 
-    const getFavs = () => {
-        dispatch({type: 'GET_FAVORITES'})
-    }
+    console.log('what is newFavs', newFavs);
+
+    const newFavs = favImages[0];
 
     return (
         <div>
-            {favImages.map(image => (
+            {newFavs.map((image, i) => (
                 <FavItem 
-                key={image.id}
+                key={i}
                 image={image}
                 />
             ))}

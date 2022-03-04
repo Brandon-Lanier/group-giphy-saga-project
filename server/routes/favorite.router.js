@@ -23,7 +23,6 @@ router.post('/', (req, res) => {
   const imageUrl = image.images.fixed_height.url
   const imageTitle = image.title
 
-
   const sqlText = `
    INSERT INTO "favorites" ("title","url","category_id")
    VALUES ($1, $2, 1);`
