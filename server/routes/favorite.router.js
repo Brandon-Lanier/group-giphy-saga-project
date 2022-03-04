@@ -10,9 +10,10 @@ router.get('/', (req, res) => {
   FROM "favorites"
   JOIN "category" ON "category"."id" = "favorites"."category_id";`)
   .then(response =>{
-    console.log(response);
+    res.send(response.rows)
+  }).catch(error => {
+    console.log("error getting favorites:", error);
   })
-  res.sendStatus(200);
 });
 
 // add a new favorite

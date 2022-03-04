@@ -13,7 +13,7 @@ CREATE TABLE "category" (
 
 -- Default categories. You may change them :)
 INSERT INTO "category" ("name")
-VALUES ('default'), ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
+VALUES ('favorite'), ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
 
 
 --  Table to store favorite images
@@ -21,7 +21,7 @@ CREATE TABLE "favorites" (
 	"id" SERIAL PRIMARY KEY,
 	"title" VARCHAR (150),
 	"url" VARCHAR (400), 
-	"category_id" INT  DEFAULT(1) REFERENCES "category"
+	"category_id" INT REFERENCES "category"
 );
 --------------END TABLE SETUP-----------------------
 
