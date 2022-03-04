@@ -47,7 +47,9 @@ function* fetchImage(action) {
 function* fetchFavorites() {
     try{
         const favsGET = yield axios.get('/api/favorite')
+        console.log('GEt favorites from server is', favsGET);
         yield put ({type: 'SET_FAVS', payload: favsGET})
+        console.log('Favorite List from server', favsGET); 
         
     } catch(error) {
         console.log('error setting favs :', error);
@@ -60,14 +62,11 @@ function* addLiked(action) {
     try{
         yield axios.post('/api/favorite', action.payload);
         console.log('addLiked action is: ', action.payload);
-        // yield put({type: 'ADD_LIKED'})
+        yield put({type: 'GET_FAVORITES'});
     } catch (error) {
         console.log('error posting liked image : ', error);
     }
 }
-
-
-
 
 
 const sagaMiddleware = createSagaMiddleware();
