@@ -10,6 +10,7 @@ function FavGallery() {
     }, []);
 
     const favImages = useSelector(store => store.favoritesList)
+    const categoryList = useSelector(store => store.categoryList)
     const dispatch = useDispatch();
 
     
@@ -26,6 +27,7 @@ function FavGallery() {
                 <FavItem 
                 key={i}
                 image={image}
+                categoryList={categoryList}
                 />
             ))}
         </div>

@@ -12,22 +12,25 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-function FavItem({image}) {
+function FavItem({image, categoryList}) {
 
     const dispatch = useDispatch();
 
-    const [category, setCategory] = useState('');
+
+
+    const [category, setCategory] = useState(image.name);
 
     const handleChange = (e) => {
         setCategory(e.target.value);
         
     }
 
-    // const updateCategory = () => {
-    //     dispatch({type: 'UPDATE_CATEGORY', payload: [category, image]});
-    // }
+    const updateCategory = () => {
+        dispatch({type: 'UPDATE_CATEGORY', payload: {category, image}});
+    }
 
     console.log('this is image', image);
+    console.log('this is the current category:', category)
     return (
         <Card sx={{ maxWidth: 250 }}>
         <CardMedia
@@ -44,19 +47,20 @@ function FavItem({image}) {
         <CardActions>
         <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        {/* <Select
+        <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={category}
           label="Category"
           onChange={handleChange}
-        > */}
-          {/* <MenuItem value={funny}>Funny</MenuItem>
-          <MenuItem value={cohort}>Cohort</MenuItem>
-          <MenuItem value={cartoon}>Cartoon</MenuItem>
-          <MenuItem value={nsfw}>NSFW</MenuItem>
-          <MenuItem value={meme}>Meme</MenuItem>
-        </Select> */}
+        >
+          <MenuItem value={'favorite'}>Favorite</MenuItem>
+          <MenuItem value={'funny'}>Funny</MenuItem>
+          <MenuItem value={'cohort'}>Cohort</MenuItem>
+          <MenuItem value={'cartoon'}>Cartoon</MenuItem>
+          <MenuItem value={'nsfw'}>NSFW</MenuItem>
+          <MenuItem value={'meme'}>Meme</MenuItem>
+        </Select>
       </FormControl>
         </CardActions>
     </Card>
