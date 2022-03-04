@@ -48,7 +48,6 @@ function* fetchFavorites() {
     try{
         const favsGET = yield axios.get('/api/favorite')
         yield put ({type: 'SET_FAVS', payload: favsGET})
-        
     } catch(error) {
         console.log('error setting favs :', error);
         
@@ -60,7 +59,7 @@ function* addLiked(action) {
     try{
         yield axios.post('/api/favorite', action.payload);
         console.log('addLiked action is: ', action.payload);
-        // yield put({type: 'ADD_LIKED'})
+        yield put({type: 'GET_FAVORITES'})
     } catch (error) {
         console.log('error posting liked image : ', error);
     }
