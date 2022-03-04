@@ -34,7 +34,7 @@ function FavItem({image}) {
             component="img"
             alt={image.title}
             height="150"
-            image={image}
+            image={image.url}
         />
         <CardContent>
             <Typography gutterBottom variant="b1" component="div">
@@ -44,19 +44,19 @@ function FavItem({image}) {
         <CardActions>
         <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
+        {/* <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={category}
           label="Category"
           onChange={handleChange}
-        >
-          <MenuItem value={funny}>Funny</MenuItem>
+        > */}
+          {/* <MenuItem value={funny}>Funny</MenuItem>
           <MenuItem value={cohort}>Cohort</MenuItem>
           <MenuItem value={cartoon}>Cartoon</MenuItem>
           <MenuItem value={nsfw}>NSFW</MenuItem>
           <MenuItem value={meme}>Meme</MenuItem>
-        </Select>
+        </Select> */}
       </FormControl>
         </CardActions>
     </Card>
