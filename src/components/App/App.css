@@ -4,3 +4,9 @@
     justify-content: space-between;
     margin: 10px;
   }
+
+  .gallery {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
