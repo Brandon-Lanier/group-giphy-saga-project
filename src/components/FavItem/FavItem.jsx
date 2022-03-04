@@ -23,20 +23,18 @@ function FavItem({image}) {
         
     }
 
-    const updateCategory = () => {
-        dispatch({type: 'UPDATE_CATEGORY', payload: [category, image]});
-    }
+    // const updateCategory = () => {
+    //     dispatch({type: 'UPDATE_CATEGORY', payload: [category, image]});
+    // }
 
-
-
-
+    console.log('this is image', image);
     return (
         <Card sx={{ maxWidth: 250 }}>
         <CardMedia
             component="img"
             alt={image.title}
             height="150"
-            image={image.images.fixed_height.url}
+            image={image}
         />
         <CardContent>
             <Typography gutterBottom variant="b1" component="div">

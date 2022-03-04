@@ -47,9 +47,9 @@ function* fetchImage(action) {
 function* fetchFavorites() {
     try{
         const favsGET = yield axios.get('/api/favorite')
-        console.log('GEt favorites from server is', favsGET);
-        yield put ({type: 'SET_FAVS', payload: favsGET})
-        console.log('Favorite List from server', favsGET); 
+        console.log('GEt favorites from server is', favsGET.data);
+        yield put ({type: 'SET_FAVS', payload: favsGET.data})
+        console.log('Favorite List from server', favsGET.data); 
         
     } catch(error) {
         console.log('error setting favs :', error);
