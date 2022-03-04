@@ -75,7 +75,9 @@ const sagaMiddleware = createSagaMiddleware();
 const storeInstance = createStore(
     combineReducers({
         //reducers go here
-        imageList
+        imageList,
+        favoritesList
+
     }),
     // Here we add middleware to interact with code as it comes through
     applyMiddleware(
