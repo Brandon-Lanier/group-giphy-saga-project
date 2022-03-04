@@ -20,7 +20,7 @@ const imageList = (state = [], action) => {
 
 const favoritesList = (state = [], action) => {
         if (action.type === 'SET_FAVS') {
-            return [...state, action.payload];
+            return action.payload;
         }
         return state;
 }
