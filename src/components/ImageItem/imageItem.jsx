@@ -5,23 +5,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import RecommendIcon from '@mui/icons-material/Recommend';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 function ImageItem({ image }) {
 
+    const dispatch = useDispatch();
+
+    // const [likedGif, setLikedGif] = useState({})
+
     const handleLike = () => {
-        console.log('I hit the like button');
+        dispatch({type: 'ADD_LIKED', payload: image})
     }
 
+
     return (
-        <Card sx={{ maxWidth: 300 }}>
+        <Card sx={{ maxWidth: 250 }}>
             <CardMedia
                 component="img"
                 alt={image.title}
-                height="200"
-                image={image.original.url}
+                height="150"
+                image={image.images.fixed_height.url}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="b1" component="div">
                     {image.title}
                 </Typography>
             </CardContent>

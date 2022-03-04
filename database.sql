@@ -12,7 +12,7 @@ CREATE TABLE "category" (
 
 -- Default categories. You may change them :)
 INSERT INTO "category" ("name")
-VALUES ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
+VALUES ('default'), ('funny'), ('cohort'), ('cartoon'), ('nsfw'), ('meme');
 
 
 --  Table to store favorite images
